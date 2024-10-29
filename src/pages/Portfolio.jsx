@@ -1,5 +1,6 @@
 import React from 'react';
 import Project from '../components/Project';
+import './Portfolio.css';
 
 function Portfolio() {
     const projects = [
@@ -9,27 +10,29 @@ function Portfolio() {
             link: "https://deployed-weather-app.com",
             repo: "https://github.com/Justbeingtai/weather-dashboard"
         },
-        // Add more projects as needed
+        {
+            title: "Task Manager",
+            description: "An app to manage tasks and deadlines.",
+            link: "https://deployed-task-manager.com",
+            repo: "https://github.com/Justbeingtai/task-manager"
+        },
+        {
+            title: "Book Search App",
+            description: "Search for books using Google Books API.",
+            link: "https://deployed-book-search.com",
+            repo: "https://github.com/Justbeingtai/book-search-app"
+        }
     ];
 
     return (
-        <section id="portfolio" className="my-5">
-            <div className="container">
-                <h2 className="text-center mb-4">Portfolio</h2>
-                <div className="row">
-                    {projects.map((project, index) => (
-                        <div key={index} className="col-md-4 mb-4">
-                            <Project 
-                                title={project.title}
-                                description={project.description}
-                                link={project.link}
-                                repo={project.repo}
-                            />
-                        </div>
-                    ))}
-                </div>
+        <div className="portfolio-container">
+            <h2 className="text-center">Portfolio</h2>
+            <div className="portfolio-grid">
+                {projects.map((project, index) => (
+                    <Project key={index} {...project} />
+                ))}
             </div>
-        </section>
+        </div>
     );
 }
 

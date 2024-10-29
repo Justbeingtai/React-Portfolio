@@ -1,11 +1,16 @@
 import React from 'react';
+import './About.css';
 
 function About() {
     return (
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome! I am Tai, a passionate developer. Here’s a little bit about me...</p>
-        </section>
+        <div className="about-container">
+            <div className="about-card">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm a passionate web developer with a keen eye for design and a love for creating interactive and efficient web applications. Welcome to my portfolio.
+                </p>
+            </div>
+        </div>
     );
 }
 

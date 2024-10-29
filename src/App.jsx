@@ -5,19 +5,24 @@ import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
     return (
-        <div className="d-flex flex-column min-vh-100">
-            <Header />
-            <main className="container flex-grow-1">
-                <About />
-                <Portfolio />
-                <Contact />
-                <Resume />
-            </main>
-            <Footer />
-        </div>
+        <Router>
+            <div>
+                <Header />
+                <main>
+                    <Routes>
+                        <Route path="/" element={<About />} />
+                        <Route path="/portfolio" element={<Portfolio />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/resume" element={<Resume />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 
