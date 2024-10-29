@@ -9,33 +9,26 @@ function Portfolio() {
             link: "https://deployed-weather-app.com",
             repo: "https://github.com/Justbeingtai/weather-dashboard"
         },
-        {
-            title: "Task Manager",
-            description: "An app to manage tasks and deadlines.",
-            link: "https://deployed-task-manager.com",
-            repo: "https://github.com/Justbeingtai/task-manager"
-        },
-        {
-            title: "Book Search App",
-            description: "Search for books using Google Books API.",
-            link: "https://deployed-book-search.com",
-            repo: "https://github.com/Justbeingtai/book-search-app"
-        }
         // Add more projects as needed
     ];
 
     return (
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            {projects.map((project, index) => (
-                <Project 
-                    key={index}
-                    title={project.title}
-                    description={project.description}
-                    link={project.link}
-                    repo={project.repo}
-                />
-            ))}
+        <section id="portfolio" className="my-5">
+            <div className="container">
+                <h2 className="text-center mb-4">Portfolio</h2>
+                <div className="row">
+                    {projects.map((project, index) => (
+                        <div key={index} className="col-md-4 mb-4">
+                            <Project 
+                                title={project.title}
+                                description={project.description}
+                                link={project.link}
+                                repo={project.repo}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 }
